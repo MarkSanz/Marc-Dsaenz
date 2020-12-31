@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+	
+<head>
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<link id="DefaultStyle" rel="stylesheet" href="Styles/default.css" type="text/css" media="screen" />
+
+<img id="screens" src="Images/Wallpapers/Blank2.png" alt="Loading"/>
+
+<script type="text/javascript" charset="utf-8" src="Scripts/jquery.min.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="Config.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="Scripts/translation.js"></script>
+		
+<script type="text/javascript" charset="utf-8" src="Scripts/main.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="Scripts/morph.js"></script>
+
+<script>
+		var numberOfForcastDays = 3; //1,2,3,4 or 5
+		var GMT = 0; // Nothing to see here...	
+</script>
+
+<script src="Scripts/Library/lang.js"></script> 
+
+<script src="analog.js"></script>
+	
+</head>
+
+<body bgcolor="Transparent" onload="init()">
+	
+	<img id="FullScreenLayer" src="Images/Wallpapers/Blank.png" alt="Icon Sets/blank.png"/>
+		
+	<img id="frame" src="Images/Blank.png" alt="Icon Sets/blank.png"/>
+
+	<img id="Wallpapers" src="Images/Blank.png" alt="Loading"/>
+	
+	<div id="blur"></div>
+
+	<div id="calendar"></div>
+
+	<div id="country"></div>
+	
+	<div id="address"></div>
+
+	<div id="RealFeel"></div>
+	
+	<div id="highlowtemp"></div>
+	
+	<div id="hours"></div>
+	
+	<div id="minutes"></div>
+	
+	<div id="ampm"></div>
+		
+	<div id="seconds"></div>
+	
+	<table id="tempTable" border="0" cellpadding="4">
+		<tr>
+			<td width="115px" height="30px"><a id="temp"></a><a id="space">  </a><a id="desc"></a></td>
+		</tr>
+	</table>
+	
+	<table id="cityTable" border="0" cellpadding="4">
+		<tr>
+			<td width="115px" height="30px"><div id="city"></div></td>
+		</tr>
+	</table>
+	
+	<div id="state"></div>
+
+	<div id="allWeatherText"><a id="CurrentConditionIconContainer"><img id="CurrentConditionIcon" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/></a></div>
+	
+	<div id="clock">
+		<div id="hour"></div><a id="puntos">:</a>
+	</div>
+	
+	<div id="calendarwrapper"><a id="weekday"></a><a> | </a><a id="month"></a><a> | </a><a id="date"></a><a id="year"></a>
+	</div> 
+
+	<div id="xmlupdate"></div>
+	<img id="MoonIcon" src="Icon Sets/blank.png"  alt="Icon Sets/blank.png"/>
+	<div id="moonphase"></div>
+	<div id="sunrise"></div>
+	<div id="sunset"></div>
+	<div id="visibility"></div>
+	<div id="humidity"></div>
+	<div id="pressure"></div>
+	<div id="rising"></div>
+	<div id="wind"></div>
+	<div id="direction"></div>
+	
+	<div id="forecast" class="fade-in">
+		<img id="Day1Icon" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+		<img id="Day2Icon" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+		<img id="Day3Icon" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+		<img id="Day4Icon" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+		<img id="Day5Icon" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+	
+		<div id="Day1Pop"></div>
+		<div id="Day2Pop"></div>
+		<div id="Day3Pop"></div>
+		<div id="Day4Pop"></div>
+		<div id="Day5Pop"></div>
+	
+		<div id="Day1"></div>
+		<div id="Day2"></div>
+		<div id="Day3"></div>
+		<div id="Day4"></div>
+		<div id="Day5"></div>
+	
+		<div id="Day1HiLo"></div>
+		<div id="Day2HiLo"></div>
+		<div id="Day3HiLo"></div>
+		<div id="Day4HiLo"></div>
+		<div id="Day5HiLo"></div>
+	</div>
+	
+	<div id="hourlyforecastContainer" class="fade-in">
+		<div id="hourlyforecast">
+			<img id="Hicon0" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon1" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon2" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon3" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon4" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon5" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon6" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon7" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon8" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon9" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon10" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+			<img id="Hicon11" src="Icon Sets/blank.png" alt="Icon Sets/blank.png"/>
+	
+			<div id="Hpop0"></div>
+			<div id="Hpop1"></div>
+			<div id="Hpop2"></div>
+			<div id="Hpop3"></div>
+			<div id="Hpop4"></div>
+			<div id="Hpop5"></div>
+			<div id="Hpop6"></div>
+			<div id="Hpop7"></div>
+			<div id="Hpop8"></div>
+			<div id="Hpop9"></div>
+			<div id="Hpop10"></div>
+			<div id="Hpop11"></div>
+	
+			<div id="Hour0"></div>
+			<div id="Hour1"></div>
+			<div id="Hour2"></div>
+			<div id="Hour3"></div>
+			<div id="Hour4"></div>
+			<div id="Hour5"></div>
+			<div id="Hour6"></div>
+			<div id="Hour7"></div>
+			<div id="Hour8"></div>
+			<div id="Hour9"></div>
+			<div id="Hour10"></div>
+			<div id="Hour11"></div>
+	
+			<div id="Htemp0"></div>
+			<div id="Htemp1"></div>
+			<div id="Htemp2"></div>
+			<div id="Htemp3"></div>
+			<div id="Htemp4"></div>
+			<div id="Htemp5"></div>
+			<div id="Htemp6"></div>
+			<div id="Htemp7"></div>
+			<div id="Htemp8"></div>
+			<div id="Htemp9"></div>
+			<div id="Htemp10"></div>
+			<div id="Htemp11"></div>
+		</div>
+	</div>	
+	
+	<!------------------------------------------>
+
+<!--Any single items from the Scroll Container below that wish to use in your mods should be moved OUT OF the scroll container and placed above this comment so you can control separatedly in the style.css file-->
+
+
+	<div id="ScrollContainer">
+		
+		<div id="WeatherUnderground"><h2>Weather Underground</h2>
+			<div id="wuCity"></div>
+			<div id="wuWeatherStation"></div>
+			<div id="wuElevation"></div>
+			<div id="wuForecast"></div>
+			<div id="wuForecastMetric"></div>  
+			<div id="wuWindText"></div>
+			<div id="wuSumm"></div>
+		</div>
+		
+		<div id="ForecastIO"><h2>Forecast IO</h2>
+			<div id="fioAPICalls"></div>
+			<div id="fioCloudCover"></div>
+			<div id="fioOzone"></div>  
+			<div id="fioStormDistance"></div>
+			<div id="fioStormBearing"></div>
+			<div id="fioPrecipIntensity"></div>
+			<div id="fioMinuteSummary"></div>
+			<div id="fioHourlySummary"></div>
+			<div id="fioDailySummary"></div>
+			<div id="fioSumm"></div>
+		</div>
+			
+		<div id="Accuweather"><h2>Accuweather</h2>
+			<div id="accuCity"></div>
+			<div id="accuUV"></div>
+			<div id="accuPrecip"></div>
+			<div id="accuRain"></div>
+			<div id="accuSnow"></div>
+			<div id="accuTStormProb"></div>
+			<div id="accuShortSumm"></div>
+			<div id="accuLongSumm"></div>
+			<div id="accuAirQuality_Type"></div>
+			<div id="accuWeed"></div>
+			<div id="accuMold"></div>
+			<div id="accuTree"></div>
+			<div id="accuGrass"></div>
+			<div id="accuMercury"></div>
+			<div id="accuVenus"></div>
+			<div id="accuMars"></div>
+			<div id="accuJupiter"></div>
+			<div id="accuSaturn"></div>
+			<div id="accuUranus"></div>
+			<div id="accuNeptune"></div>
+			<div id="accuDayShortSumm"></div>
+			<div id="accuDayLongSumm"></div>
+		</div>
+		
+		<div id="Yahoo"><h2>Yahoo</h2>
+			<div id="yCity"></div>
+			<div id="yNeigh"></div>
+			<div id="ySumm"></div>
+		</div>
+		
+		<div id="Google"><h2>Google</h2>
+			<div id="gCity"></div>
+			<div id="gNeigh"></div>
+			<div id="gNeigh2"></div>
+			<div id="gNeigh3"></div>
+			<div id="gCounty"></div>
+			<div id="gState"></div>
+			<div id="gCountry"></div>
+			<div id="gPlace"></div>
+			<div id="gBus"></div>
+			<div id="gTrain"></div>
+			<div id="gPostalSuffix"></div>
+			<div id="gAddress"></div>
+			<div id="gFullAddr0"></div>
+			<div id="gFullAddr1"></div>
+			<div id="gFullAddr2"></div>
+			<div id="gFullAddr3"></div>
+			<div id="gCoordinates"></div>
+		</div>
+		
+	</div>
+   
+<div class="dial">
+     
+	<div class="dot"></div>
+     
+	<div class="sec-hand"></div>
+     
+	<div class="min-hand"></div>
+      
+	<div class="hour-hand"></div>
+   
+</div>
+
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,596 @@
+body {
+	margin: 0;	
+	padding: 0;
+	color:rgb(142, 142, 142);
+	zoom: 1.1;
+	font-family: mesmerize;
+	-webkit-animation: fadein 1s;
+}
+
+@font-face {
+    font-family: 'mesmerize';
+    src: url('../Fonts/bahnschrift.ttf');
+}
+
+@font-face {
+    font-family: 'mesmerizeLT';
+    src: url('../Fonts/bahnschrift.ttf');
+}
+
+@font-face {
+    font-family: 'mesmerizeUL';
+    src: url('../Fonts/bahnschrift.ttf');
+}
+
+@font-face {
+	font-family: 'bold';
+	src: url('../Fonts/bahnschrift.ttf');
+}
+
+@font-face {
+	font-family:regular;
+	src: url('../Fonts/bahnschrift.ttf');
+}
+
+@-webkit-keyframes fadein {
+	0%		{opacity : 0.0;}
+	100%		{opacity : 1.0;}
+}
+
+/*Use either #clock or one of the individual element underneath - not BOTH!*/
+/*To display something use display:block, to hide something use display:none*/
+
+#clock{
+opacity:0;display:none;
+}
+
+#allWeatherText { /* CONTROLS ICON */
+	text-align:center;
+	height:40px;
+	top:122px;
+	left: 88px;
+	position:relative;
+}
+
+#CurrentConditionIcon {
+
+	width: 90px; /* ADJUST ICON SIZE HERE */
+	
+}
+
+#tempTable {
+		margin-left: 20px;
+		table-layout: fixed;
+		position:absolute; 
+		text-align: center; 
+		width: 140px; 
+		top:85px; 
+		left: 50%;
+		font-size: 12px;
+}
+
+#cityTable {
+		margin-left: 12px;
+		table-layout: fixed;
+		position:absolute; 
+		text-align: center; 
+		width: 140px; 
+		top:57px; 
+		left: 50%;
+}
+
+#city {	
+	font-size: 15px;
+	color: #dbdbdb;
+	font-weight: bold;
+}
+
+#Wallpapers{
+display: none;
+}	   
+  
+
+#screens{
+	width:414px;
+	height:740px;
+    position: absolute;
+    top: 83px;
+    left: 50%;
+    transform:translate(-50%, -50%);
+	background-position: center center;
+	background-size: cover;
+  	background-repeat: no-repeat;
+	opacity:1;
+	z-index: -10;
+}
+
+.dial {
+   position: absolute;
+   top:-280px;
+   left: 50%;
+
+}
+
+.dot {
+   position: absolute;
+   top: 409px;
+   left: -77px;
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   background: radial-gradient(ellipse 20px 15px at 50% 0, #a5a5a5 40%, #000 80%);
+   z-index: 10;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+}
+
+.sec-hand {
+   position: absolute;
+   top: 278px;
+   left: -71px;
+   margin-left: -7px;
+   width: 14px;
+   height: 162px;fill: black;
+   background: url('../Images/second.svg') 50% 50% no-repeat;
+   z-index: 9;
+   transform-origin: 50% 136px;
+}
+
+
+.min-hand {
+   position: absolute;
+   top: 290px;  
+   left: -72px;
+   margin-left: -8px;
+   width: 16px;
+   height: 144px;
+   background: url('../Images/minute.svg') 50% 50% no-repeat;
+   z-index: 7;
+   transform-origin: 50% 124px;
+}
+
+.hour-hand {
+   position: absolute;
+   top: 325px;
+   left: -71px;
+   margin-left: -7px;
+   width: 14px;
+   height: 110px;
+   background: url('../Images/hour.svg') 50% 50% no-repeat;
+   z-index: 8;
+   transform-origin: 50% 90px;
+}
+
+#calendarwrapper {z-index:300;
+	color:rgb(142, 142, 142);
+	position:absolute;
+	font-size: 12.9px;
+	font-weight: bold;
+	top:259px;
+	left:0;
+	width:100%;
+	height:24px;
+	text-align:center;
+	text-shadow:0px 0px 0px rgb(0, 0, 0);
+}
+#weekday { color: white; }
+
+#month { color: white; }
+
+#date { color: red; }
+
+#year { }
+
+
+
+
+
+
+/* ALL ELEMENTS UNDER THIS LINE ARE NOT USED*/
+
+
+
+
+
+/* Use either #calendar or one of the individual element underneath - not BOTH! */
+/* To display something use display:block;, to hide something use display:none; */
+
+#calendar { display:none; }
+
+#hours {opacity:0;display:none; }
+
+#Hour {opacity:0;display:none; }
+
+#minutes {opacity:0;display:none;}
+
+#ampm {opacity:0;display:none; }
+
+#seconds {opacity:0;display:none; }
+
+
+/*----Use any one of these individual tags below to separate out single items you want to use in your widgets. Just don't forget to also move its correspnding <div id=....></div> in the HTML file anywhere OUTSIDE of the ScrollContainer---*/
+/*#accuCity, #accuUv, #accuPrecip, #accuRain, #accuSnow, #accuTStormProb, #accuShortSumm, #accuLongSumm, #accuAirQuality_Type, #accuWeed, #accuMold, #accuTree, #accuGrass, #accuMercury, #accuVenus, #accuMars, #accuJupiter, #accuSaturn, #accuUranus, #accuNeptune, #fioAPICalls, #fioCloudCover, #fioOzone, #fioStormDistance, #fioStormBearing, #fioPrecipIntensity, #fioMinuteSummary, #fioHourlySummary, #fioDailySummary, #wuCity, #wuWeatherStation, #wuElevation, #wuForecast, #wuForecastMetric, #wuWindText, #gCity, #gNeigh, #gPlace, #gTrain, #gNeigh2, #gNeigh3, #gPostalSuffix, #gAddress, #gCounty, #gState, #gCountry, #gFullAddr0, #gFullAddr1, #gFullAddr2, #gFullAddr3, #gCoordinates {
+	position:absolute;
+	width:100%;
+	top:0%;
+	left:0%;
+        display:none;
+}*/
+
+#FullScreenLayer {
+	position: absolute;display:none;
+	width: 100%;
+	z-index: -10;
+	-webkit-animation: fadein 2s linear 1 normal;
+	-webkit-animation-fill-mode: forwards;
+        
+}
+
+#frame {
+	position: absolute;
+        width:100%;
+	display:block;
+	top: 0;-webkit-backdrop-filter: blur(10px);
+
+	left:0;
+	z-index: -5;
+	opacity:0;
+}
+
+#blur {
+	position: absolute;
+	height: 8.95%;
+	width: 90%;
+	left:5%;
+	top:28.38%;
+	z-index: -7;
+	-webkit-backdrop-filter: blur(10px);
+	overflow: hidden; 
+	opacity:0;
+}
+
+#address {
+	position:absolute;
+	top: 50px;
+	left: 0px;
+	width:100%;
+	font-size:3vw;
+	display:none;
+}
+#RealFeel {
+	display:none;
+}
+
+#state {	
+	text-align:center;
+	width:100%;
+	height:51px;
+	top:80px;
+	position:absolute;
+	display:none;
+}
+
+#desc {}
+
+#temp {}
+
+#highlowtemp {
+	position:absolute;
+	display:none;
+	top:32.8%;
+	left:25%;
+	text-align:left;
+	z-index:90;
+	font-size:2.8vw;
+	font-family:mesmerizeUL;
+	opacity:0;
+}
+
+#MoonIcon {
+	position:absolute;
+	top:20.5%;
+	left: 20%;
+	display:none;
+}
+
+#moonphase {
+	position:absolute;
+	top:21%;
+	left:2%;
+	width: 15%;
+	text-align:center;
+	font-size:3vw;
+	display:none;
+}
+
+#sunrise {
+	position:absolute;
+	top: 12%;
+	right: 3.5%;
+	text-align:right;
+	font-size:3vw;
+	display:none;
+}
+
+#sunset {
+	position:absolute;
+	top:14%;
+	right: 3.5%;
+	text-align:right;
+	font-size:3vw;
+	display:none;
+}
+
+#xmlupdate {
+	position:absolute;
+	top:10%;
+	right: 3.5%;
+	text-align:right;
+	font-size:3vw;
+        display:none;
+}
+
+#wind {
+	position: absolute;
+	top: 22%;
+	right: 3.5%;
+	width: 100%;
+	text-align: right;
+	font-size:3vw;
+	display:none;
+}
+
+#pressure {
+	position: absolute;
+	top: 16%;display:none;
+	right: 3.5%;
+	text-align: right;
+	font-size:3vw;
+        display:none;
+}
+
+#rising {
+	position: absolute;display:none;
+	top: 15.8%;
+	right: 33.5%;
+	text-align: right;
+	font-size:3vw;
+	display:none;
+}
+
+#humidity {
+	position: absolute;display:none;
+	top: 25%;
+	left: 0%;
+	text-align: center;
+	width:100%;
+	font-size:4vw;opacity:0;
+}
+
+#visibility {
+	position: absolute;display:none;
+	top: 18%;
+	right: 3.5%;
+	text-align: right;
+	font-size:3vw;
+	display:none;
+}
+
+#forecast {
+	position: absolute;display:none;
+	top: 28.8%;
+	left:34.7%;
+	width : 100%;
+	height: 12.8%;
+	z-index: 50;
+	overflow: hidden;
+}
+
+#Day1Icon, #Day2Icon, #Day3Icon, #Day4Icon, #Day5Icon {
+	position: absolute;opacity:0;display:none;
+	width: 9%;
+	top: 3.8%;
+	left: 3%; /* set in main.js */
+}
+
+#Day1, #Day2, #Day3, #Day4, #Day5 {
+	position: absolute;opacity:0;display:none;
+	top: 39%;
+	left: 2%; /* set in main.js */
+	width: 18%;
+	text-align: center;
+	color:white;
+	font-size: 2.9vw;
+        font-family:mesmerizeUL;
+}
+
+#Day1HiLo, #Day2HiLo, #Day3HiLo, #Day4HiLo, #Day5HiLo {
+	position: absolute;
+	top: 67.9%;
+	left: 2.2%; /* set in main.js */
+	width: 17%;
+	text-align: center;
+	color:666666;
+	font-size: 2.5vw;
+        display:none;
+}
+
+#hourlyforecastContainer {
+	position: absolute;
+	left:0%;
+	top: 38%;
+	width: 100%;
+	height: 16%;
+	z-index:1001;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	display: none;
+}
+
+#hourlyforecast {
+	position: absolute;display:none;
+	top: 0%;
+	width: 230%;
+	height: 100%;
+	z-index:50;
+}
+
+#Hicon0, #Hicon1, #Hicon2, #Hicon3, #Hicon4, #Hicon5, #Hicon6, #Hicon7, #Hicon8, #Hicon9, #Hicon10, #Hicon11 {
+	position: absolute;display:none;
+	top: 0%;
+	left: 1.4%; /* set in main.js */
+}
+
+#Hpop0, #Hpop1, #Hpop2, #Hpop3, #Hpop4, #Hpop5, #Hpop6, #Hpop7, #Hpop8, #Hpop9, #Hpop10, #Hpop11 {
+	position: absolute;display:none;
+	top: 40%;
+	left: 2.5%; /* set in main.js */
+	width: 5%;
+	text-align: right;
+	color: #88C5F0;
+	text-shadow: black -1px 1px 1px, black -2px 2px 3px;
+	font-size: 3vw;
+}
+
+#Hour0, #Hour1, #Hour2, #Hour3, #Hour4, #Hour5, #Hour6, #Hour7, #Hour8, #Hour9, #Hour10, #Hour11 {
+	position: absolute;
+	display:none;
+	top: 58%;
+	left: 1.57%; /* set in main.js */
+	width: 6%;
+	text-align: center;
+	text-shadow: black -1px 1px 1px, black -2px 2px 3px;
+	font-size: 3vw;
+}
+
+#Htemp0, #Htemp1, #Htemp2, #Htemp3, #Htemp4, #Htemp5, #Htemp6, #Htemp7, #Htemp8, #Htemp9, #Htemp10, #Htemp11 {
+	position: absolute;
+	display:none;
+	top: 72%;
+	left: 1.3%; /* set in main.js */
+	width: 7.5%;
+	text-align: center;
+	text-shadow: black -1px 1px 1px, black -2px 2px 3px;
+	font-size: 3.6vw;
+}
+
+/* USE THIS SECTION BELOW FOR ANY OF THE MULTIAPI ELEMENTS YOU WANT TO ADD TO YOUR WIDGET */
+@font-face {
+    font-family: 'hilton';
+    src: url('../Fonts/hilton-sans.ttf');
+}
+
+@font-face {
+    font-family: 'Cabin';
+    src: url('../Fonts/Cabin-Regular.ttf');
+}
+
+#ScrollContainer { /* can use display:none below once you've separated out from the ScrollContainer, in the html file, the <div id=....></div> items you want to appear in your mod */
+	position:absolute;
+	top:38%;
+	left:0%;
+	line-height:130%;
+	width:100%;
+	height:62%;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
+	max-width: 100%;
+    overflow-x: hidden;
+	z-index:1002;
+    display:none;
+}
+
+#WeatherUnderground { /*main big WeatherUnderground container*/
+	position:relative;
+	top:0%;
+	width:95%;
+	left:3%;
+	line-height:130%;
+	text-align: justify;
+	font-family: hilton;
+	font-size:4.8vw;	
+	z-index:1002;
+}
+
+#ForecastIO { /*main big FIO container*/
+	position:relative;
+	top:0%;
+	left:2%;
+	line-height:130%;
+/*	text-align: justify;*/
+	width:95%;
+	font-family: hilton;
+	font-size:4.8vw;
+	z-index:1002;
+}
+
+#Accuweather { /*main big AccuWeather container*/
+	position:relative;
+	top:0%;
+	left:2%;
+	line-height:130%;
+	/*text-align: justify;*/
+	width:95%;
+	font-family: hilton;
+	font-size:4.8vw;
+	z-index:1002;
+}
+
+#Yahoo { /*main big Yahoo container*/
+	position:relative;
+	top:0%;
+	left:2%;
+	line-height:130%;
+	/*text-align: justify;*/
+	width:95%;
+	font-family: hilton;
+	font-size:4.8vw;
+	z-index:1002;
+}
+
+#Google { /*main big Google container*/
+	position:relative;
+	top:0%;
+	line-height:130%;
+	left:2%;
+	text-align: justify;
+	width:95%;
+	font-family: hilton;
+	font-size:4.8vw;
+	z-index:1002;
+}
+
+/*----Forecast Summaries Sections---*/
+#wuSumm, #wuSummNight {
+	font-size:4.1vw;
+	line-height:115%;
+	width:96%;
+}
+
+#wuForecast, #wuForecastMetric{
+	line-height:115%;
+}
+
+#fioSumm {
+	font-size:4.1vw;
+	line-height:115%;	
+	width:96 %;
+}
+
+#ySumm {
+	font-size:4.1vw;
+	line-height:115%;	
+	width:96 %;
+        display:none;
+}
+
+#accuDayShortSumm, #accuDayLongSumm {
+	font-size:4.1vw;
+	line-height:115%;
+	width:96%;
+}
+
+@font-face {
+	font-family:regular;
+	src: url(Fonts/bahnschrift.ttf);
+}
+
